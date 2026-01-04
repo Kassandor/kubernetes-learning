@@ -1,0 +1,3 @@
+[submodule "newildberries"]
+	path = newildberries
+	url = https://github.com/Kassandor/newildberries
