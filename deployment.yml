@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newildberries
+spec:
+  selector:
+    matchLabels:
+      app: newildberries
+  template:
+    metadata:
+      labels:
+        app: newildberries
+    spec:
+      containers:
+        - name: newildberries
+          image: alexmelory/newildberries
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 8000

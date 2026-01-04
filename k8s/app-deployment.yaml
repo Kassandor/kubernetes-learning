@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: newildberries
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: alexmelory/newildberries:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: POSTGRES_USER
+              value: newildberries
+            - name: POSTGRES_DB
+              value: newildberries
+            - name: POSTGRES_PASSWORD
+              value: newildberries
+            - name: POSTGRES_HOST
+              value: db
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: SUPPORT_EMAIL
+              value: support@gmail.com
